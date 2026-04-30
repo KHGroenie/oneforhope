@@ -104,15 +104,17 @@
   }
 
   /* Warm community photo background — replace this URL with your actual photo */
-  .hero-photo-bg {
-    position: absolute;
-    inset: 0;
-    /* Warm golden-brown gradient that feels like hands/community — swap for real photo */
-    background:
-      radial-gradient(ellipse 80% 70% at 50% 40%, #6B3A1F 0%, #3D1E0A 40%, #1A0C04 100%);
-    background-size: cover;
-    background-position: center;
-  }
+.hero-photo-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 40%,
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0.6) 60%,
+    rgba(0,0,0,0.85) 100%
+  );
+}
 
   /* To use a real photo instead, add: background-image: url('hero.jpg'); */
 
@@ -1504,7 +1506,7 @@
     </div>
   </div>
   <div>
-    <form class="form" action="https://formspree.io/f/yourformid" method="POST">
+   <form class="form" action="https://formspree.io/f/xbdqorwr" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Your Name</label>
