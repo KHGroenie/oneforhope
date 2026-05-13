@@ -421,15 +421,18 @@
   transform: scale(1.06);
 }
 
-.shop-card-img::after {
-  content: '⊕';
-  position: absolute;
-  bottom: 12px;
-  right: 14px;
-  font-size: 18px;
-  color: rgba(245,237,216,0.25);
-  transition: color 0.3s;
-  pointer-events: none;
+@media (min-width: 769px) {
+  .shop-card-img::after {
+    content: '⊕';
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-size: 18px;
+    color: rgba(245,237,216,0.25);
+    transition: color 0.3s;
+    pointer-events: none;
+  }
+  .shop-card-img:hover::after { color: var(--gold-bright); }
 }
   .shop-card-img:hover::after { color: var(--gold-bright); }
   .shop-card-coming {
