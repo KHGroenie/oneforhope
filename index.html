@@ -380,7 +380,20 @@
 }
 
 .shop-card:hover {
-  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 60px rgba(201,134,10,0.12);
+}
+.shop-card:hover .shop-card-img::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40px;
+  background: rgba(201,134,10,0.25);
+  filter: blur(20px);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .shop-card-img {
@@ -396,8 +409,8 @@
 }
 
 .shop-card-img img {
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 85%;
   object-fit: contain;
   object-position: center;
   transition: transform 0.5s ease;
@@ -436,8 +449,8 @@
   .shop-card-give { font-size: 10px; color: var(--gold-bright); display: flex; align-items: center; gap: 6px; }
   .shop-card-give::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); }
   .shop-card-btn {
-    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-white);
-    background: none; border: 1px solid rgba(245,237,216,0.2); padding: 8px 18px;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-bright);
+    background: none; border: 1px solid rgba(201,134,10,0.4); padding: 8px 18px;
     border-radius: var(--radius-pill); cursor: pointer; font-family: 'Montserrat', sans-serif;
     font-weight: 500; text-decoration: none; display: inline-block; transition: border-color 0.3s, color 0.3s;
   }
