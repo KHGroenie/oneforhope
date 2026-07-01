@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ═══════════════════════════════════════════════════════
-     PRIMARY SEO META TAGS
-═══════════════════════════════════════════════════════ -->
 <title>OneForHope — Buy One, Give One | South African Clothing with Impact</title>
 <meta name="description" content="Every hoodie or shirt you buy gives one to someone who needs it most. Premium South African apparel with built-in community giving. Corporate gifting and individual orders welcome." />
 <meta name="keywords" content="buy one give one South Africa, corporate gifting SA, social impact clothing, branded hoodies South Africa, CSR apparel, OneForHope, community giving, South African fashion" />
@@ -14,9 +11,6 @@
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://oneforhope.netlify.app/" />
 
-<!-- ═══════════════════════════════════════════════════════
-     OPEN GRAPH — Facebook, LinkedIn, WhatsApp previews
-═══════════════════════════════════════════════════════ -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://oneforhope.netlify.app/" />
 <meta property="og:title" content="OneForHope — One Purchase. Two Smiles." />
@@ -28,25 +22,15 @@
 <meta property="og:locale" content="en_ZA" />
 <meta property="og:site_name" content="OneForHope" />
 
-<!-- ═══════════════════════════════════════════════════════
-     TWITTER / X CARD
-═══════════════════════════════════════════════════════ -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@oneforhope" />
 <meta name="twitter:title" content="OneForHope — One Purchase. Two Smiles." />
 <meta name="twitter:description" content="Buy one, give one. Premium South African apparel with built-in community impact. No add-ons. No prompts. Just giving." />
 <meta name="twitter:image" content="https://oneforhope.netlify.app/og-image.jpg" />
 
-<!-- ═══════════════════════════════════════════════════════
-     FAVICONS
-═══════════════════════════════════════════════════════ -->
 <link rel="icon" type="image/png" href="logo.png" />
 <link rel="apple-touch-icon" href="logo.png" />
 
-<!-- ═══════════════════════════════════════════════════════
-     STRUCTURED DATA (JSON-LD) — helps Google understand
-     the business and show rich results in search
-═══════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,7 +86,6 @@
     overflow-x: hidden;
   }
 
-  /* GRAIN OVERLAY */
   body::after {
     content: '';
     position: fixed; inset: 0;
@@ -110,7 +93,7 @@
     pointer-events: none; z-index: 9999; opacity: 0.5;
   }
 
-  /* NAV */
+  /* ═══════════ NAV ═══════════ */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 500;
     padding: 24px 48px;
@@ -135,6 +118,82 @@
     transition: box-shadow 0.3s !important;
   }
   .nav-cta:hover { box-shadow: 0 4px 20px rgba(201,134,10,0.4); }
+
+  /* ═══════════ HAMBURGER ═══════════ */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+    z-index: 600;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--warm-white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s, background 0.3s;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--gold-bright); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--gold-bright); }
+
+  /* ═══════════ MOBILE DRAWER ═══════════ */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 490;
+    background: rgba(8,8,8,0.97);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-menu a {
+    display: block;
+    color: var(--warm-white);
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    padding: 18px 40px;
+    text-align: center;
+    transition: color 0.2s;
+    border-bottom: 1px solid rgba(245,237,216,0.06);
+    width: 100%;
+  }
+  .mobile-menu a:first-child { border-top: 1px solid rgba(245,237,216,0.06); }
+  .mobile-menu a:hover { color: var(--gold-bright); }
+  .mobile-menu .mobile-cta {
+    margin-top: 32px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--black) !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px !important;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    border-radius: var(--radius-pill);
+    border: none;
+    border-bottom: none !important;
+    width: auto !important;
+  }
 
   /* HERO */
   .hero {
@@ -223,7 +282,6 @@
   }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold-bright); background: rgba(201,134,10,0.05); }
 
-  /* SCROLL INDICATOR */
   .scroll-indicator {
     position: absolute; bottom: 40px; left: 56px;
     display: flex; align-items: center; gap: 16px;
@@ -239,17 +297,10 @@
     animation: scrollPulse 2.5s ease infinite;
   }
 
-  /* ═══════════════════════════════════════════════════
-     MISSION STRIP — watermark pseudo-element REMOVED
-     The ::before had a repeating text watermark that
-     distracted from the main message. Replaced with
-     a clean, empty ::before (just the top/bottom borders).
-  ═══════════════════════════════════════════════════ */
   .mission-strip {
     background: linear-gradient(135deg, #B87800 0%, var(--gold-light) 50%, #D4920F 100%);
     padding: 28px 56px; text-align: center; position: relative; overflow: hidden;
   }
-  /* ::before REMOVED — was the distracting repeating ghost text */
   .mission-strip p {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(20px, 3vw, 30px); font-weight: 400;
@@ -257,7 +308,6 @@
   }
   .mission-strip p em { font-style: italic; font-weight: 600; }
 
-  /* SECTION COMMON */
   .section-label {
     font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold);
     margin-bottom: 18px; display: flex; align-items: center; gap: 14px;
@@ -314,7 +364,6 @@
   .benefit-text h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; color: var(--warm-white); }
   .benefit-text p { font-size: 12px; line-height: 1.75; color: var(--text-muted); }
 
-  /* CHARITY SELECTOR */
   .charity-box { background: rgba(201,134,10,0.05); border: 1px solid rgba(201,134,10,0.2); border-radius: var(--radius-lg); padding: 28px; margin-top: 16px; }
   .charity-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--warm-white); margin-bottom: 8px; }
   .charity-box .sub { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
@@ -341,7 +390,6 @@
   .charity-own-input:focus { border-color: var(--gold); }
   .charity-own-input::placeholder { color: rgba(245,237,216,0.25); }
 
-  /* CORP STATS */
   .corp-stats { display: flex; flex-direction: column; gap: 10px; }
   .stat-card {
     background: var(--black); border: 1px solid rgba(201,134,10,0.15);
@@ -357,7 +405,7 @@
   /* SHOP */
   .shop-section { padding: 110px 56px; max-width: 1300px; margin: 0 auto; }
   .shop-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
-  .shop-tabs { display: flex; gap: 8px; }
+  .shop-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
   .shop-tab {
     padding: 10px 22px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
     cursor: pointer; background: var(--dark2); color: var(--text-muted);
@@ -374,67 +422,29 @@
     transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
     cursor: pointer; border: 1px solid rgba(245,237,216,0.04);
   }
-.shop-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .shop-card.visible { opacity: 1; transform: translateY(0); }
+  .shop-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 60px rgba(201,134,10,0.12); }
 
-.shop-card:hover {
-  box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 60px rgba(201,134,10,0.12);
-}
-.shop-card:hover .shop-card-img::before {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 40px;
-  background: rgba(201,134,10,0.25);
-  filter: blur(20px);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.shop-card-img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: var(--dark3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  cursor: zoom-in;
-}
-
-.shop-card-img img {
-  width: 85%;
-  height: 85%;
-  object-fit: contain;
-  object-position: center;
-  transition: transform 0.5s ease;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
-}
-
-.shop-card:hover .shop-card-img img {
-  transform: scale(1.06);
-}
-
-@media (min-width: 769px) {
-  .shop-card-img::after {
-    content: '⊕';
-    position: absolute;
-    bottom: 12px;
-    right: 14px;
-    font-size: 18px;
-    color: rgba(245,237,216,0.25);
-    transition: color 0.3s;
-    pointer-events: none;
+  .shop-card-img {
+    width: 100%; aspect-ratio: 1 / 1; background: var(--dark3);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative; cursor: zoom-in;
   }
-  .shop-card-img:hover::after { color: var(--gold-bright); }
-}
-  .shop-card-img:hover::after { color: var(--gold-bright); }
+  .shop-card-img img {
+    width: 85%; height: 85%; object-fit: contain; object-position: center;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+  }
+  .shop-card:hover .shop-card-img img { transform: scale(1.06); }
+
+  @media (min-width: 769px) {
+    .shop-card-img::after {
+      content: '⊕'; position: absolute; bottom: 12px; right: 14px;
+      font-size: 18px; color: rgba(245,237,216,0.25); transition: color 0.3s; pointer-events: none;
+    }
+    .shop-card-img:hover::after { color: var(--gold-bright); }
+  }
+
   .shop-card-coming {
     position: absolute; inset: 0; background: rgba(8,8,8,0.6);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
@@ -584,7 +594,7 @@
   @keyframes scrollPulse { 0%, 100% { opacity: 0.2; transform: scaleY(0.7); } 50% { opacity: 1; transform: scaleY(1); } }
   @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.05); opacity: 1; } }
 
-  /* RESPONSIVE */
+  /* ═══════════ RESPONSIVE ═══════════ */
   @media (max-width: 1024px) {
     .hero-content { padding: 140px 32px 80px; }
     .hiw-header { grid-template-columns: 1fr; }
@@ -598,10 +608,16 @@
     .shop-grid { grid-template-columns: repeat(2, 1fr); }
     .shop-header { flex-direction: column; align-items: flex-start; }
   }
+
   @media (max-width: 768px) {
     nav { padding: 18px 24px; }
     nav.scrolled { padding: 14px 24px; }
+
+    /* Hide desktop nav links, show hamburger */
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-menu { display: flex; }
+
     .hero-content { padding: 120px 24px 80px; }
     .hero-tagline { font-size: clamp(44px, 12vw, 72px); }
     .hero-trust { gap: 16px; }
@@ -625,6 +641,7 @@
   <a href="#" class="nav-logo">
     <img src="logo.png" alt="OneForHope" onerror="this.parentElement.innerHTML='<span style=\'font-family:Cormorant Garamond,serif;font-size:20px;font-weight:600;color:#F5B93A;letter-spacing:0.12em\'>ONEFORHOPE</span>'">
   </a>
+  <!-- Desktop links -->
   <ul class="nav-links">
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#shop">Shop</a></li>
@@ -632,7 +649,22 @@
     <li><a href="#causes">Our Causes</a></li>
     <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
   </ul>
+  <!-- Hamburger (mobile only) -->
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#shop" onclick="closeMobileMenu()">Shop</a>
+  <a href="#corporate" onclick="closeMobileMenu()">Corporate</a>
+  <a href="#causes" onclick="closeMobileMenu()">Our Causes</a>
+  <a href="#contact" class="mobile-cta" onclick="closeMobileMenu()">Enquire Now →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -676,7 +708,7 @@
   </div>
 </section>
 
-<!-- MISSION STRIP — clean, no watermark -->
+<!-- MISSION STRIP -->
 <div class="mission-strip">
   <p>One for <em>you.</em> One for <em>hope.</em> — it is that simple.</p>
 </div>
@@ -729,7 +761,7 @@
           <div class="benefit-icon">🏷️</div>
           <div class="benefit-text">
             <h4>Your Brand. Their Warmth.</h4>
-            <p> Custom-branded apparel for your team — and matching garments gifted into the community wearing your logo.</p>
+            <p>Custom-branded apparel for your team — and matching garments gifted into the community wearing your logo.</p>
           </div>
         </div>
         <div class="benefit">
@@ -813,10 +845,12 @@
       <p class="section-label">The Collection</p>
       <h2 class="section-title">Shop with <em>purpose.</em></h2>
     </div>
+    <!-- FIX 1: Added "Headwear" tab and changed filter to match data-cat="hat" -->
     <div class="shop-tabs">
       <button class="shop-tab active" onclick="filterShop('all', this)">All</button>
       <button class="shop-tab" onclick="filterShop('hoodie', this)">Hoodies</button>
       <button class="shop-tab" onclick="filterShop('shirt', this)">Shirts</button>
+      <button class="shop-tab" onclick="filterShop('hat', this)">Headwear</button>
       <button class="shop-tab" onclick="filterShop('coming', this)">Coming Soon</button>
     </div>
   </div>
@@ -877,27 +911,21 @@
         </div>
       </div>
     </div>
-   <div class="shop-card" data-cat="hat">
-  <div class="shop-card-img" onclick="openLightbox('buckethat.png', 'Bucket Hat', 'Branded Bucket Hat', 'Premium embroidered bucket hat — perfect for corporate events, outreach days, and team gifting.')">
-    <img src="buckethat.png" alt="Branded Bucket Hat" onerror="this.style.display='none'">
-
-    <!-- Optional fallback icon overlay (same style as before) -->
-    <!-- <div class="shop-hoodie-icon" style="font-size:72px; opacity:0.08;">🧢</div> -->
-  </div>
-
-  <div class="shop-card-body">
-    <div class="shop-card-cat">Headwear</div>
-    <div class="shop-card-name">Branded Bucket Hat</div>
-    <p class="shop-card-desc">
-      Premium DTF bucket hat — perfect for corporate events, outreach days, and team gifting.
-    </p>
-
-    <div class="shop-card-footer">
-      <span class="shop-card-give">+1 given to community</span>
-      <a href="#contact" class="shop-card-btn">Enquire</a>
+    <!-- FIX 2: data-cat kept as "hat" — now matches the new "Headwear" filter tab -->
+    <div class="shop-card" data-cat="hat">
+      <div class="shop-card-img" onclick="openLightbox('buckethat.png', 'Bucket Hat', 'Branded Bucket Hat', 'Premium embroidered bucket hat — perfect for corporate events, outreach days, and team gifting.')">
+        <img src="buckethat.png" alt="Branded Bucket Hat" onerror="this.style.display='none'">
+      </div>
+      <div class="shop-card-body">
+        <div class="shop-card-cat">Headwear</div>
+        <div class="shop-card-name">Branded Bucket Hat</div>
+        <p class="shop-card-desc">Premium DTF bucket hat — perfect for corporate events, outreach days, and team gifting.</p>
+        <div class="shop-card-footer">
+          <span class="shop-card-give">+1 given to community</span>
+          <a href="#contact" class="shop-card-btn">Enquire</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
     <div class="shop-card" data-cat="coming">
       <div class="shop-card-img">
         <div class="shop-hoodie-icon" style="font-size:72px; opacity:0.08;">🍵</div>
@@ -966,15 +994,14 @@
       <div class="cause-card">
         <span class="cause-icon">🌸</span>
         <h3 class="cause-title">Women in Rural Communities</h3>
-       <p class="cause-text">Working alongside grassroots organisations reaching women who have survived abuse in underserved rural areas — clothing as dignity, not just warmth.</p>
-
-<p class="cause-text" style="margin-top: 12px; opacity: 0.75;">
-  Our current partner is <strong>Brave Spaces</strong> — a girl empowerment programme run by 
- <a href="https://www.wildconnection.co.za" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline; text-underline-offset: 3px;">Wild Connection</a>
-  in KwaZulu-Natal. It creates safe spaces where vulnerable young women from rural communities 
-  receive counselling, mentorship, self-defence training, and practical skills — from beauty 
-  therapy to craft-making with local Gogos. Funded from the heart, built for real impact.
-</p>
+        <p class="cause-text">Working alongside grassroots organisations reaching women who have survived abuse in underserved rural areas — clothing as dignity, not just warmth.</p>
+        <p class="cause-text" style="margin-top: 12px; opacity: 0.75;">
+          Our current partner is <strong>Brave Spaces</strong> — a girl empowerment programme run by
+          <a href="https://www.wildconnection.co.za" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline; text-underline-offset: 3px;">Wild Connection</a>
+          in KwaZulu-Natal. It creates safe spaces where vulnerable young women from rural communities
+          receive counselling, mentorship, self-defence training, and practical skills — from beauty
+          therapy to craft-making with local Gogos. Funded from the heart, built for real impact.
+        </p>
       </div>
       <div class="cause-card">
         <span class="cause-icon">🦏</span>
@@ -1072,7 +1099,21 @@
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); });
 
-  // Shop filter
+  // ── Mobile menu ──
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const burger = document.getElementById('hamburger');
+    const isOpen = menu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Shop filter — works for all data-cat values including 'hat'
   function filterShop(cat, btn) {
     document.querySelectorAll('.shop-tab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
